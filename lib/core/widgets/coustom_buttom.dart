@@ -5,7 +5,8 @@ import 'package:flutter/material.dart';
 class CoustomButtom extends StatelessWidget {
   final String titel;
   final Color? backgroundColor;
-  const CoustomButtom({super.key, required this.titel, this.backgroundColor});
+  final void Function()? onTap;
+  const CoustomButtom({super.key, required this.titel, this.backgroundColor, this.onTap});
 
   @override
   Widget build(BuildContext context) {

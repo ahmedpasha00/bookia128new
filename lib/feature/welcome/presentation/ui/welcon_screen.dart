@@ -1,5 +1,6 @@
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:bookia/core/widgets/coustom_buttom.dart';
+import 'package:bookia/feature/auth/presentation/ui/login/login_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -33,7 +34,15 @@ class WelconScreen extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                CoustomButtom(titel: 'Login'),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                    );
+                  },
+                  child: CoustomButtom(titel: 'Login'),
+                ),
                 SizedBox(height: 15),
 
                 CoustomButtom(titel: 'Register', backgroundColor: Colors.white),

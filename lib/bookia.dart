@@ -9,7 +9,10 @@ class Bookia extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SplashScreen(),
-      theme: ThemeData(fontFamily: "DM Serif Display"),
+      theme: ThemeData(
+        scaffoldBackgroundColor: Colors.white,
+        fontFamily: "DM Serif Display",
+      ),
     );
   }
 }
