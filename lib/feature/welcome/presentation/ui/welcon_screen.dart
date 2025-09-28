@@ -1,9 +1,11 @@
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:bookia/core/widgets/coustom_buttom.dart';
+import 'package:bookia/feature/auth/presentation/cubit/auth_cubit.dart';
 import 'package:bookia/feature/auth/presentation/ui/login/login_screen.dart';
 import 'package:bookia/feature/auth/presentation/ui/register/register_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class WelconScreen extends StatelessWidget {
   const WelconScreen({super.key});
@@ -39,7 +41,12 @@ class WelconScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => LoginScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (context) => AuthCubit(),
+                          child: LoginScreen(),
+                        ),
+                      ),
                     );
                   },
                   child: CoustomButtom(titel: 'Login'),

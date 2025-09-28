@@ -6,24 +6,32 @@ class CoustomButtom extends StatelessWidget {
   final String titel;
   final Color? backgroundColor;
   final void Function()? onTap;
-  const CoustomButtom({super.key, required this.titel, this.backgroundColor, this.onTap});
+  const CoustomButtom({
+    super.key,
+    required this.titel,
+    this.backgroundColor,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      padding: EdgeInsets.symmetric(vertical: 20),
-      alignment: Alignment.center,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
-        color: backgroundColor??AppColors.primaryColor,
-      ),
-      child: Text(
-        titel,
-        style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w400,
-          color: backgroundColor == null ? Colors.white : Colors.black,
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: double.infinity,
+        padding: EdgeInsets.symmetric(vertical: 20),
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          color: backgroundColor ?? AppColors.primaryColor,
+        ),
+        child: Text(
+          titel,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+            color: backgroundColor == null ? Colors.white : Colors.black,
+          ),
         ),
       ),
     );
