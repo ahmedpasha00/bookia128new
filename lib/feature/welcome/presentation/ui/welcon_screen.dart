@@ -57,7 +57,12 @@ class WelconScreen extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => RegisterScreen()),
+                      MaterialPageRoute(
+                        builder: (context) => BlocProvider(
+                          create: (context) => AuthCubit(),
+                          child: RegisterScreen(),
+                        ),
+                      ),
                     );
                   },
                   child: CoustomButtom(

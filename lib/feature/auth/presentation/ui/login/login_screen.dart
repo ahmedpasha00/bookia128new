@@ -3,6 +3,7 @@ import 'package:bookia/core/widgets/coustom_app_bar.dart';
 import 'package:bookia/core/widgets/coustom_buttom.dart';
 import 'package:bookia/core/widgets/coustom_text_form_field.dart';
 import 'package:bookia/feature/auth/presentation/cubit/auth_cubit.dart';
+import 'package:bookia/feature/auth/presentation/ui/register/register_screen.dart';
 import 'package:bookia/feature/home/presentation/ui/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -173,25 +174,38 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               SizedBox(height: 50),
-              Center(
-                child: Text.rich(
-                  TextSpan(
-                    children: [
-                      TextSpan(
-                        text: "Don’t have an account?",
-                        style: TextStyle(
-                          color: AppColors.darkColor,
-                          fontSize: 15,
-                        ),
+              InkWell(
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => BlocProvider(
+                        create: (context) => AuthCubit(),
+                        child: RegisterScreen(),
                       ),
-                      TextSpan(
-                        text: "Register Now",
-                        style: TextStyle(
-                          color: AppColors.primaryColor,
-                          fontSize: 15,
+                    ),
+                  );
+                },
+                child: Center(
+                  child: Text.rich(
+                    TextSpan(
+                      children: [
+                        TextSpan(
+                          text: "Don’t have an account?",
+                          style: TextStyle(
+                            color: AppColors.darkColor,
+                            fontSize: 15,
+                          ),
                         ),
-                      ),
-                    ],
+                        TextSpan(
+                          text: "Register Now",
+                          style: TextStyle(
+                            color: AppColors.primaryColor,
+                            fontSize: 15,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
