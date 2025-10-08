@@ -20,6 +20,14 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  isEmailValid(String email){
+
+    final bool emailValid = 
+    RegExp(r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+      .hasMatch(email);
+      return emailValid;
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +48,13 @@ class _LoginScreenState extends State<LoginScreen> {
               CoustomTextFormField(
                 controller: emailController,
                 hintText: 'Enter your email',
+                       validator: (v) {
+              if (v == null || v.isEmpty) {
+                return "Email is required";
+              }else if(!isEmailValid(v)){
+                return "Email is not valid";
+              }
+            },
               ),
               SizedBox(height: 15),
               CoustomTextFormField(
@@ -132,14 +147,14 @@ class _LoginScreenState extends State<LoginScreen> {
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.borderColor),
                   borderRadius: BorderRadius.circular(10),
-                ),
+                ), 
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center, 
                   children: [
                     SvgPicture.asset("assets/images/googel.svg"),
                     SizedBox(width: 10),
                     Text(
-                      "Sign in with Google",
+                      "Sign in with Google", 
                       style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.w600,
