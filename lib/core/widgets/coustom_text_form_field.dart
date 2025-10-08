@@ -1,6 +1,7 @@
 import 'package:bookia/core/theme/app_colors.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CoustomTextFormField extends StatefulWidget {
   final String hintText;
@@ -30,7 +31,7 @@ class _CoustomTextFormFieldState extends State<CoustomTextFormField> {
       cursorColor: AppColors.primaryColor,
       decoration: InputDecoration(
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8.r),
           borderSide: BorderSide(color: AppColors.borderColor),
         ),
         suffixIcon: widget.isPassword
@@ -49,15 +50,15 @@ class _CoustomTextFormFieldState extends State<CoustomTextFormField> {
         filled: true,
         hintText: widget.hintText,
         hintStyle: TextStyle(
-          fontSize: 15,
+          fontSize: 15.sp,
           fontWeight: FontWeight.w400,
           color: AppColors.grayColor,
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(8),
+          borderRadius: BorderRadius.circular(8).r,
           borderSide: BorderSide(color: AppColors.primaryColor),
         ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
+        border: OutlineInputBorder(borderRadius: BorderRadius.circular(10.r)),
       ),
     );
   }

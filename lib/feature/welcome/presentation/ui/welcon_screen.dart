@@ -6,6 +6,7 @@ import 'package:bookia/feature/auth/presentation/ui/register/register_screen.dar
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class WelconScreen extends StatelessWidget {
   const WelconScreen({super.key});
@@ -22,16 +23,20 @@ class WelconScreen extends StatelessWidget {
         ),
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 22.0),
+            padding: EdgeInsets.symmetric(horizontal: 22.0.w),
             child: Column(
               children: [
-                SizedBox(height: 135),
-                Image.asset("assets/images/logo splash.png"),
-                SizedBox(height: 28),
+                SizedBox(height: 135.h),
+                Image.asset(
+                  "assets/images/logo splash.png",
+                  width: 210.w,
+                  height: 66.h,
+                ),
+                SizedBox(height: 28.h),
                 Text(
                   "Order Your Book Now!",
                   style: TextStyle(
-                    fontSize: 20,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.darkColor,
                   ),
@@ -51,7 +56,7 @@ class WelconScreen extends StatelessWidget {
                   },
                   child: CoustomButtom(titel: 'Login'),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: 15.h),
 
                 InkWell(
                   onTap: () {
@@ -70,7 +75,7 @@ class WelconScreen extends StatelessWidget {
                     backgroundColor: Colors.white,
                   ),
                 ),
-                SizedBox(height: 95),
+                SizedBox(height: 95.h),
               ],
             ),
           ),

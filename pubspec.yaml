@@ -39,6 +39,8 @@ dependencies:
   shared_preferences: ^2.5.3
   #علشان اعمل شكر الايرور ذي بوست مان يبقا شكله حلو
   pretty_dio_logger: ^1.4.0
+  #دي علشان اخلي التطبيق ريسبونسف  يعني يشتغل علي اي حجم شاشه 
+  flutter_screenutil: ^5.9.3
 
 dev_dependencies:
   # The "flutter_lints" package below contains a set of recommended lints to

@@ -2,6 +2,7 @@ import 'package:bookia/feature/home/presentation/ui/home_screen.dart';
 import 'package:bookia/feature/welcome/presentation/ui/welcon_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -11,9 +12,6 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-   
-   
-
   @override
   void initState() {
     super.initState();
@@ -34,13 +32,19 @@ class _SplashScreenState extends State<SplashScreen> {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [Image.asset("assets/images/logo splash.png")],
+              children: [
+                Image.asset(
+                  "assets/images/logo splash.png",
+                  width: 210.w,
+                  height: 66.h,
+                ),
+              ],
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 4),
+              padding: EdgeInsets.symmetric(vertical: 4.h),
               child: Text(
                 "Order Your Book Now",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 20.sp, fontWeight: FontWeight.bold),
               ),
             ),
           ],
@@ -49,5 +53,3 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-
-

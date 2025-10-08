@@ -8,6 +8,7 @@ import 'package:bookia/feature/home/presentation/ui/home_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -34,17 +35,17 @@ class _LoginScreenState extends State<LoginScreen> {
       appBar: CoustomAppBar(),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 22.0),
+        padding:  EdgeInsets.symmetric(horizontal: 22.0.w),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SizedBox(height: 29),
+              SizedBox(height: 29.h),
               Text(
                 "Welcome back! Glad\nto see you, Again!",
-                style: TextStyle(fontSize: 30, fontWeight: FontWeight.w400),
+                style: TextStyle(fontSize: 30.sp, fontWeight: FontWeight.w400),
               ),
-              SizedBox(height: 32),
+              SizedBox(height: 32.h),
               CoustomTextFormField(
                 controller: emailController,
                 hintText: 'Enter your email',
@@ -56,26 +57,26 @@ class _LoginScreenState extends State<LoginScreen> {
               }
             },
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 15.h),
               CoustomTextFormField(
                 controller: passwordController,
                 hintText: 'Enter your password',
                 isPassword: true,
               ),
-              SizedBox(height: 13),
+              SizedBox(height: 13.h),
 
               Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   "Forgot Password?",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 14.sp,
                     fontWeight: FontWeight.w400,
                     color: AppColors.darkgrayColor,
                   ),
                 ),
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 30.h),
 
               BlocListener<AuthCubit, AuthState>(
                 listener: (context, state) {
@@ -111,7 +112,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   },
                 ),
               ),
-              SizedBox(height: 34),
+              SizedBox(height: 34.h),
               Row(
                 children: [
                   Expanded(
@@ -126,7 +127,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   Text(
                     "Or Login with",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.w400,
                       color: AppColors.darkgrayColor,
                     ),
@@ -140,23 +141,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 21),
+              SizedBox(height: 21.h),
               Container(
                 width: double.infinity,
-                height: 56,
+                height: 56.h,
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.borderColor),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                 ), 
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center, 
                   children: [
                     SvgPicture.asset("assets/images/googel.svg"),
-                    SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     Text(
                       "Sign in with Google", 
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColors.darkgrayColor,
                       ),
@@ -164,23 +165,23 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 15.h),
               Container(
                 width: double.infinity,
-                height: 56,
+                height: 56.sp,
                 decoration: BoxDecoration(
                   border: Border.all(color: AppColors.borderColor),
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(10.r),
                 ),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     SvgPicture.asset("assets/images/appel.svg"),
-                    SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     Text(
                       "Sign in with Apple",
                       style: TextStyle(
-                        fontSize: 16,
+                        fontSize: 16.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColors.darkgrayColor,
                       ),
@@ -188,7 +189,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ],
                 ),
               ),
-              SizedBox(height: 50),
+              SizedBox(height: 50.h),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -209,14 +210,14 @@ class _LoginScreenState extends State<LoginScreen> {
                           text: "Don’t have an account?",
                           style: TextStyle(
                             color: AppColors.darkColor,
-                            fontSize: 15,
+                            fontSize: 15.sp,
                           ),
                         ),
                         TextSpan(
                           text: "Register Now",
                           style: TextStyle(
                             color: AppColors.primaryColor,
-                            fontSize: 15,
+                            fontSize: 15.sp,
                           ),
                         ),
                       ],
